@@ -32,3 +32,6 @@
 
 # Ignore environmental variables
 .env
+
+# Ignore process, scratch and reference files
+/process
