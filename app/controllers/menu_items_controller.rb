@@ -1,7 +1,7 @@
 class MenuItemsController < ApplicationController
 
   def index
-
+    @items = MenuItem.all.uniq
   end
 
   def new

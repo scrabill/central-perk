@@ -1,1 +1,7 @@
 <h1>All Menu Items</h1>
+
+<ul>
+  <%= @items.each do |item| %>
+  <li><%= item.name %></li>
+  <% end %>
+</ul>
