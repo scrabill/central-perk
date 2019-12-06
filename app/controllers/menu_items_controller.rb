@@ -4,12 +4,13 @@ class MenuItemsController < ApplicationController
 
   end
 
-  def create
-
+  def new
+    @item = MenuItem.new
   end
 
-  def new
-
+  def create
+    @item = MenuItem.create(item_params)
+    redirect_to menu_item_path(@item)
   end
 
   def edit
@@ -27,4 +28,12 @@ class MenuItemsController < ApplicationController
   def destroy
 
   end
+
+  private
+
+  def item_params
+    params.require(:menu_item).permit(:name, :description, :price)
+  end
+
+
 end
