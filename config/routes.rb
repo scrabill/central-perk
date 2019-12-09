@@ -15,4 +15,7 @@ Rails.application.routes.draw do
   post '/login',   to: 'sessions#create'
   get '/logout',  to: 'sessions#destroy'
 
+  #oAuth Callback
+  get '/auth/:provider/callback', to: 'sessions#omniauth'
+
 end

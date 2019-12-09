@@ -45,8 +45,28 @@ class SessionsController < ApplicationController
 
   end
 
+  # TODO: Flash messaging for success/failure
+
   def destroy
     session.clear
+    redirect_to root_path
   end
+
+  # TODO: Fallback for if login with oAuth is not successfull
+  # TODO: Flash messaging for success/failure
+
+  def omniauth
+    @user = User.from_omniauth(auth)
+    @user.save
+    session[:user_id] = @user.id
+    puts "You have been successfully logged in with Google"
+    redirect_to root_path
+  end
+
+  private
+
+    def auth
+      request.env['omniauth.auth']
+    end
 
 end
