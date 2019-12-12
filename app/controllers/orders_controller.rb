@@ -1,7 +1,11 @@
 class OrdersController < ApplicationController
 
   def index
-    @orders = Order.all
+    if params[:user_id]
+      @orders = Order.where(user_id: params[:user_id])
+    else
+      @orders = Order.all
+    end
   end
 
   # TODO: Filtered by completed and reuse index view

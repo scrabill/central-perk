@@ -22,7 +22,8 @@ Specs:
 - [x] Include logout (how e.g. Devise)
 - [x] Include third party signup/login (how e.g. Devise/OmniAuth)
   - Users can sign in with a Google account
-- [ ] Include nested resource show or index (URL e.g. users/2/recipes)
+- [x] Include nested resource show or index (URL e.g. users/2/recipes)
+  - Navigating to users/1/orders shows all orders taken by that user
 - [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
   - When logged in, a new Order is created at user/:user_id/orders/new
 - [ ] Include form display of validation errors (form URL e.g. /recipes/new)
