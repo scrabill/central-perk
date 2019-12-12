@@ -26,7 +26,8 @@ Specs:
   - Navigating to users/1/orders shows all orders taken by that user
 - [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
   - When logged in, a new Order is created at user/:user_id/orders/new
-- [ ] Include form display of validation errors (form URL e.g. /recipes/new)
+- [x] Include form display of validation errors (form URL e.g. /recipes/new)
+  - Creating a MenuItem without a name renders the form with an error message saying MenuItems cannot be blank.
 
 Confirm:
 - [ ] The application is pretty DRY
