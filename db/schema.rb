@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_235506) do
+ActiveRecord::Schema.define(version: 2019_12_12_220806) do
 
   create_table "menu_items", force: :cascade do |t|
     t.string "name"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2019_12_10_235506) do
   create_table "orders", force: :cascade do |t|
     t.integer "user_id"
     t.string "name_for_pickup"
-    t.boolean "completed"
+    t.boolean "completed", default: false
     t.integer "total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
