@@ -4,6 +4,11 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
+  # TODO: Filtered by completed and reuse index view
+  def completed
+    @orders = Order.completed
+  end
+
   def new
     @order = Order.new
   end
@@ -34,7 +39,11 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find_by_id(params[:id])
+    if params[:id] == "completed"
+      puts "please work"
+    else
+      @order = Order.find_by_id(params[:id])
+    end
   end
 
   def update
