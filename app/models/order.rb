@@ -9,4 +9,12 @@ class Order < ApplicationRecord
   validates :menu_item_ids, presence: true
 
   scope :completed, -> { where(completed: true) }
+
+  def total
+    total = 0
+    self.menu_items.each do |item|
+      total += item.price
+    end
+    total
+  end
 end
