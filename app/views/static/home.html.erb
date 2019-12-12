@@ -4,7 +4,10 @@
 <%= link_to "Add an Item to the Menu", new_menu_item_path %>
 
 <h2>Orders</h2>
-<%= link_to "Create a New Order", new_user_order_path(current_user) %>
+<% if current_user != nil %>
+  <%= link_to "Create a New Order", new_user_order_path(current_user) %>
+<% end %>
+
 
 <hr>
 
