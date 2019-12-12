@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :menu_items
   resources :order_items
+  resources :orders
 
   resources :users do
     resources :orders
