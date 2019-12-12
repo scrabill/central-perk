@@ -1,5 +1,16 @@
 <h1>Create a New Menu Item</h1>
 
+<% if @item.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@item.errors.count, "error") %> prohibited this article from being saved:</h2>
+    <ul>
+    <% @item.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for(@item) do |f| %>
 
   <%= f.label :name %>

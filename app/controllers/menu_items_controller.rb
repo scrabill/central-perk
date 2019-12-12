@@ -10,7 +10,12 @@ class MenuItemsController < ApplicationController
 
   def create
     @item = MenuItem.create(item_params)
-    redirect_to menu_item_path(@item)
+
+    if @item.save
+      redirect_to menu_item_path(@item)
+    else
+      render :new
+    end
   end
 
   def edit
