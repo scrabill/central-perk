@@ -34,8 +34,12 @@ class OrdersController < ApplicationController
       end
     end
 
-    @order.save
-    redirect_to order_path(@order)
+    if @order.save
+      redirect_to order_path(@order)
+    else
+      render :new
+    end
+
   end
 
   def edit
