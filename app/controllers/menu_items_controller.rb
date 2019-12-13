@@ -19,7 +19,7 @@ class MenuItemsController < ApplicationController
   end
 
   def edit
-
+    @item = MenuItem.find_by_id(params[:id])
   end
 
   def show
@@ -27,7 +27,13 @@ class MenuItemsController < ApplicationController
   end
 
   def update
-
+    @item = MenuItem.find_by_id(params[:id])
+    @item.update(item_params)
+    if @item.save
+      redirect_to menu_item_path(@item)
+    else
+      render :edit
+    end
   end
 
   def destroy
