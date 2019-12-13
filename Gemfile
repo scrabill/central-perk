@@ -10,6 +10,7 @@ gem "omniauth-rails_csrf_protection"
 ruby '2.5.1'
 
 require 'pry'
+require 'faker'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
