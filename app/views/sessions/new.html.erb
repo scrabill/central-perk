@@ -1,3 +1,5 @@
+<%= render 'static/sign_in_with_google' %>
+
 <%= form_for :user, url: { controller: "sessions", action: "new"}, method: :post  do |f| %>
 
   <%= f.label :email %>
