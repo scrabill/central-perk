@@ -34,6 +34,7 @@ class OrdersController < ApplicationController
       end
     end
 
+    # Can user @order since .create already saves it
     if @order.save
       redirect_to user_order_path(current_user.id, @order)
     else
