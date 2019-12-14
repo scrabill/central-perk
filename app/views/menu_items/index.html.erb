@@ -1,7 +1,7 @@
 <h1>All Menu Items</h1>
 
 <ul>
-  <%= @items.sort! { |a, b|  a.name <=> b.name }.each do |item| %>
+  <% @items.sort! { |a, b|  a.name <=> b.name }.each do |item| %>
   <li>
     <%= link_to item.name, menu_item_path(item) %>
   </li>
