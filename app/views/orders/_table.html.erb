@@ -1,0 +1,24 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name for Pickup</th>
+      <th>Items</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @orders.each do |order| %>
+    <tr>
+      <td><%= link_to order.name_for_pickup, order_path(order) %></td>
+      <td>
+        <% order.menu_items.each do |item| %>
+          <%= item.name %>
+        <% end %>
+      </td>
+      <td><%= order.created_at.strftime("%A, %d %b %Y %l:%M %p") %></td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>

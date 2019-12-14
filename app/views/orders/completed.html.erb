@@ -1,9 +1,3 @@
 <h1>All Completed Orders</h1>
 
-<ul>
-  <% @orders.each do |order| %>
-    <li>
-      <%= link_to order.name_for_pickup, order_path(order) %>
-    </li>
-  <% end %>
-</ul>
+<%= render 'orders/table' %>
