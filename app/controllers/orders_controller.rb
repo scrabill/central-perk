@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
     end
 
     if @order.save
-      redirect_to order_path(@order)
+      redirect_to user_order_path(current_user.id, @order)
     else
       render :new
     end

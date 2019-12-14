@@ -1,6 +1,6 @@
 <%= form_for @order do |f| %>
 
-  <%= f.hidden_field :user_id, :value => params[:user_id] %>
+  <%= f.hidden_field :user_id, :value => session[:user_id] %>
 
   <%= f.label :name_for_pickup %>
   <%= f.text_field :name_for_pickup %><br><br>
