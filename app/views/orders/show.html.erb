@@ -1,13 +1,6 @@
 <h1>Order #<%= @order.id %></h1>
 
-<ul>
-  <% @order.menu_items.each do |item| %>
-  <li>
-    <%= item.name %> - $<%= item.price %>
-  </li>
-  <% end %>
-  <li>Total: $<%= @order.total %></li>
-</ul>
+<%= render 'orders/order_details' %>
 
 <%= link_to "Back To All Orders", orders_path %>
 <%= link_to "Create a New Order", new_user_order_path(current_user) %>
