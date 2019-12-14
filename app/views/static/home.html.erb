@@ -1,18 +1,10 @@
 <h1>Welcome to Central Perk</h1>
 
-<h2>Items</h2>
-<%= link_to "View all Menu Items", menu_items_path %>
-<%= link_to "Add an Item to the Menu", new_menu_item_path %>
-
-<h2>Orders</h2>
-<% if current_user != nil %>
-  <%= link_to "View all Orders", orders_path %>
-  <%= link_to "Create a New Order", new_user_order_path(current_user) %>
+<% if current_user %>
+  <%= render 'home_content' %>
 <% end %>
-
 
 <hr>
 
-<p><%= link_to "Sign Up with Google", '/auth/google_oauth2', method: :post %></p>
 <p><%= link_to "Sign Up", signup_path %></p>
 <p><%= link_to "Log In", login_path %></p>

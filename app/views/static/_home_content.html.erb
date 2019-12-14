@@ -1,0 +1,9 @@
+<h2>Items</h2>
+<%= link_to "View all Menu Items", menu_items_path %>
+<%= link_to "Add an Item to the Menu", new_menu_item_path %>
+
+<h2>Orders</h2>
+<% if current_user != nil %>
+  <%= link_to "View all Orders", orders_path %>
+  <%= link_to "Create a New Order", new_user_order_path(current_user) %>
+<% end %>
