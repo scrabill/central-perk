@@ -1,15 +1,6 @@
 <h1>Create a User</h1>
 
-<% if @user.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this article from being saved:</h2>
-    <ul>
-    <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= render partial: 'layouts/errors', locals: {object: @user} %>
 
 <%= render 'static/sign_in_with_google' %>
 

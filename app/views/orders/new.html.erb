@@ -1,14 +1,5 @@
 <h1>Create a New Order</h1>
 
-<% if @order.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@order.errors.count, "error") %> prohibited this article from being saved:</h2>
-    <ul>
-    <% @order.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= render partial: 'layouts/errors', locals: {object: @order} %>
 
 <%= render 'form' %>
