@@ -36,7 +36,7 @@ class OrdersController < ApplicationController
 
     # Can user @order since .create already saves it
     if @order.save
-      redirect_to user_order_path(current_user.id, @order)
+      redirect_to order_path(@order)
     else
       render :new
     end
@@ -44,7 +44,7 @@ class OrdersController < ApplicationController
   end
 
   def edit
-
+    @order = Order.find_by_id(params[:id])
   end
 
   def show
@@ -56,7 +56,26 @@ class OrdersController < ApplicationController
   end
 
   def update
+    @order = Order.find_by_id(params[:id])
+    @order.menu_items.clear
+    @order.update(order_params)
 
+    items_to_add = params[:order][:menu_item_ids]
+
+    items_to_add.each do |item_id|
+      if item_id != ""
+        item_id = item_id.to_i
+        item_to_add = MenuItem.find_by_id(item_id)
+        # binding.pry
+        @order.menu_items << item_to_add
+      end
+    end
+
+    if @order.save
+      redirect_to order_path(@order)
+    else
+      render :edit
+    end
   end
 
   def destroy

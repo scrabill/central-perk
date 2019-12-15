@@ -7,5 +7,6 @@
 
   <%= f.collection_check_boxes(:menu_item_ids, MenuItem.all, :id, :name) %>
 
-  <%= f.submit "Create Order" %>
+  <%= f.submit button_text %>
+
 <% end %>
