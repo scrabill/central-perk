@@ -10,9 +10,9 @@
 User.create(name: "Gunther", email: "gunther@centralperk.com", password: ENV["PASSWORD"])
 
 # Coffee
-# 6.times do
-#   MenuItem.create(name: Faker::Coffee.unique.blend_name, description: Faker::Coffee.unique.origin + Faker::Coffee.notes)
-# end
+MenuItem.create(name: "Coffee", description: "Just coffee. House blend, served hot with room for cream or sugar.", price: 2.80 )
+MenuItem.create(name: "Iced Coffee", description: "Cold brew served over ice and blended with sweetened milk.", price: 3.5 )
+MenuItem.create(name: "Espresso", description: "Strong, but not bitter. A perfect start to a long day.", price: 3.10 )
 
 # Specialty Coffee
 MenuItem.create(name: "Cappuccino", description: "House blend coffee served with steamed and frothed milk.", price: 3.5 )
@@ -29,11 +29,7 @@ MenuItem.create(name: "Banana", description: "Organic.", price: 1.00 )
 MenuItem.create(name: "Scone", description: "Blueberry, lemon with a royal icing drizzle.", price: 2.0 )
 MenuItem.create(name: "Biscotti", description: "Twice baked and very crispy. Choose from dark chocolate or salted caramel.", price: 1.50)
 
-# => Order(id: integer, user_id: integer, name_for_pickup: string, completed: boolean, total: integer, created_at: datetime, updated_at: datetime
-
-# Parameters: {"utf8"=>"✓", "authenticity_token"=>"lirJJFtQZyajxqNbmF+CaeKvxmvs+FWbg4rgoBSNI4Izgvnm9aXy3hMIlnTW2qhlOGyaQe6JWiTm/W8rFYoY8Q==", "o
-# rder"=>{"user_id"=>"4", "name_for_pickup"=>"", "menu_item_ids"=>["", "35"]}, "commit"=>"Create Order"}
 # Orders
 6.times do
-  order = Order.create!(user_id: 1, name_for_pickup: Faker::TvShows::Friends.character, completed: false, menu_item_ids: [Faker::Number.within(range: 1..9), Faker::Number.within(range: 1..9), Faker::Number.within(range: 1..9)])
+  order = Order.create!(user_id: 1, name_for_pickup: Faker::TvShows::Friends.unique.character, completed: false, menu_item_ids: [Faker::Number.within(range: 1..12), Faker::Number.within(range: 1..12), Faker::Number.within(range: 1..12)])
 end
