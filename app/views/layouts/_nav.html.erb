@@ -1,6 +1,6 @@
 <nav>
   <%= link_to "Home", root_path %>
-  <% if current_user %>
+  <% if current_user && current_user.name %>
     <%= link_to "Log Out", logout_path %>
   Hello, <%= current_user.name %>
   <% else %>
