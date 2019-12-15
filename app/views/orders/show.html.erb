@@ -1,4 +1,6 @@
-<h1>Order #<%= @order.id %></h1>
+<h1>Order #<%= @order.id %> for <%= @order.name_for_pickup %></h1>
+
+<%= @order.time_taken %>
 
 <%= render 'orders/order_details' %>
 
