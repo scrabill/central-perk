@@ -1,10 +1,27 @@
-<nav>
-  <%= link_to "Home", root_path %>
-  <% if current_user %>
-    <%= link_to "Log Out", logout_path %>
-  Hello, <%= current_user.name %>
-  <% else %>
-    <%= link_to "Sign Up", signup_path %>
-    <%= link_to "Log In", login_path %>
-  <% end %>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+      ☕️
+    </a>
+  </div>
+
+  <div class="navbar-menu">
+    <div class="navbar-start">
+        <%= link_to "Home", root_path, class: "navbar-item" %>
+    </div>
+
+    <div class="navbar-end is-active">
+      <div class="navbar-item">
+        <div class="buttons">
+          <% if current_user %>
+            Hello, <%= current_user.name %>!&nbsp;
+            <%= link_to "Log Out", logout_path, class: "button is-primary" %>
+          <% else %>
+            <%= link_to "Sign Up", signup_path, class: "button is-light" %>
+            <%= link_to "Log In", login_path, class: "button is-light" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </nav>
