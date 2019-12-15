@@ -33,3 +33,7 @@ MenuItem.create(name: "Biscotti", description: "Twice baked and very crispy. Cho
 6.times do
   order = Order.create!(user_id: 1, name_for_pickup: Faker::TvShows::Friends.unique.character, completed: false, menu_item_ids: [Faker::Number.within(range: 1..12), Faker::Number.within(range: 1..12), Faker::Number.within(range: 1..12)])
 end
+
+3.times do
+  order = Order.create!(user_id: 1, name_for_pickup: Faker::TvShows::Friends.unique.character, completed: true, menu_item_ids: [Faker::Number.within(range: 1..9), Faker::Number.within(range: 10..12)])
+end
