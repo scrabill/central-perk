@@ -10,6 +10,10 @@ class Order < ApplicationRecord
 
   scope :completed, -> { where(completed: true) }
 
+  def time_taken
+    created_at.strftime("%A, %d %b %Y %l:%M %p")
+  end
+
   def total
     total = 0
     self.menu_items.each do |item|
