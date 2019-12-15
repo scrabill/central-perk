@@ -1,17 +1,17 @@
-<h1>Create a New Menu Item</h1>
+<h1 class="title is-1">Create a New Menu Item</h1>
 
 <%= render partial: 'layouts/errors', locals: {object: @item} %>
 
 <%= form_for(@item) do |f| %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %><br><br>
+  <%= f.label :name, class: "label" %>
+  <%= f.text_field :name, class: "input" %><br><br>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %><br><br>
+  <%= f.label :description, class: "label" %>
+  <%= f.text_field :description, class: "input"  %><br><br>
 
-  <%= f.label :price %>
-  <%= f.number_field :price, step: :any %><br><br>
+  <%= f.label :price, class: "label" %>
+  <%= f.number_field :price, step: :any, class: "input"  %><br><br>
 
-  <%= f.submit "Create Item" %>
+  <%= f.submit "Create Item", class: "button is-link" %>
 <% end %>

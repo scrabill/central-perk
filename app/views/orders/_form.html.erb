@@ -2,10 +2,10 @@
 
   <%= f.hidden_field :user_id, :value => session[:user_id] %>
 
-  <%= f.label :name_for_pickup %>
-  <%= f.text_field :name_for_pickup %><br><br>
+  <%= f.label :name_for_pickup, class: "label" %>
+  <%= f.text_field :name_for_pickup, class: "input" %><br><br>
 
-  <%= f.collection_check_boxes(:menu_item_ids, MenuItem.all, :id, :name) %>
+  <%= f.collection_check_boxes(:menu_item_ids, MenuItem.all, :id, :name, class: "checkbox") %>
 
   <div class="field">
    <%= f.label "Order Complete?" %>
@@ -16,6 +16,6 @@
    <%= f.radio_button :completed, false, :checked => (@order.completed == false ? true : false) %>
  </div>
 
-  <%= f.submit button_text %>
+  <%= f.submit button_text, class: "button is-link" %>
 
 <% end %>

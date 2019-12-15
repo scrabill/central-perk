@@ -1,12 +1,14 @@
+<h1 class="title is-1">Login</h1>
+
 <%= render 'static/sign_in_with_google' %>
 
 <%= form_for :user, url: { controller: "sessions", action: "new"}, method: :post  do |f| %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %><br><br>
+  <%= f.label :email, class: "label" %>
+  <%= f.email_field :email, class: "input" %><br><br>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %><br><br>
+  <%= f.label :password, class: "label" %>
+  <%= f.password_field :password, class: "input" %><br><br>
 
-  <%= f.submit "Log In" %>
+  <%= f.submit "Log In", class: "button is-link" %>
 <% end %>
