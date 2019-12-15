@@ -7,6 +7,15 @@
 
   <%= f.collection_check_boxes(:menu_item_ids, MenuItem.all, :id, :name) %>
 
+  <div class="field">
+   <%= f.label "Order Complete?" %>
+   <%= f.label :completed, "Yes", :value => "true" %>
+   <%= f.radio_button :completed, true, :checked => (@order.completed == true ? true : false) %>
+
+   <%= f.label :completed, "No", :value => "false" %>
+   <%= f.radio_button :completed, false, :checked => (@order.completed == false ? true : false) %>
+ </div>
+
   <%= f.submit button_text %>
 
 <% end %>

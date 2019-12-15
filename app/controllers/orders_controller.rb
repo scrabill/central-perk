@@ -88,6 +88,7 @@ class OrdersController < ApplicationController
   # When do we need an attribute accessor?
 
   def order_params
+    ActiveRecord::Type::Boolean.new.cast(params[:order][:completed])
     params.require(:order).permit(:user_id, :name_for_pickup, :completed, :total, :menu_item_ids)
   end
 

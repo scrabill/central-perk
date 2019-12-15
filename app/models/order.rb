@@ -21,4 +21,12 @@ class Order < ApplicationRecord
     end
     total
   end
+
+  def status
+    if self.completed == false
+      "In Progress"
+    else
+      "Completed"
+    end
+  end
 end

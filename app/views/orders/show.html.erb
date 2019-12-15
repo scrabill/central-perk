@@ -1,6 +1,7 @@
 <h1>Order #<%= @order.id %> for <%= @order.name_for_pickup %></h1>
 
 <%= @order.time_taken %>
+Status: <%= @order.status %>
 
 <%= render 'orders/order_details' %>
 
