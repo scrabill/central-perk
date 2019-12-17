@@ -8,7 +8,7 @@
   </thead>
   <tbody>
 
-    <% @orders.each do |order| %>
+    <% @orders.order(created_at: :desc).each do |order| %>
     <tr>
       <td><%= link_to order.name_for_pickup, order_path(order) %></td>
       <td>
