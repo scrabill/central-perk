@@ -20,7 +20,6 @@ class OrdersController < ApplicationController
   # TODO: Clean the heck out of this...
 
   def create
-    # Should this be user.order.build instead?
     @order = Order.create(order_params)
 
     items_to_add = params[:order][:menu_item_ids]
@@ -48,11 +47,7 @@ class OrdersController < ApplicationController
   end
 
   def show
-    if params[:id] == "completed"
-      puts "please work"
-    else
-      @order = Order.find_by_id(params[:id])
-    end
+    @order = Order.find_by_id(params[:id])
   end
 
   def update
@@ -66,7 +61,6 @@ class OrdersController < ApplicationController
       if item_id != ""
         item_id = item_id.to_i
         item_to_add = MenuItem.find_by_id(item_id)
-        # binding.pry
         @order.menu_items << item_to_add
       end
     end
@@ -83,9 +77,6 @@ class OrdersController < ApplicationController
   end
 
   private
-
-  # params "order"=>{"user_id"=>"2", "name_for_pickup"=>"Shannon", "menu_item_id"=>["", "2"]}, "commit"=>"Create Order"}
-  # When do we need an attribute accessor?
 
   def order_params
     ActiveRecord::Type::Boolean.new.cast(params[:order][:completed])

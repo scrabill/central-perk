@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   before_action :require_login, only: [:new, :create, :show]
   helper_method :current_user
 
-  # Will this account for if it is unable to find a current user (no one is logged in)?
   def current_user
     @user ||= User.find_by_id(session[:user_id])
   end
@@ -12,6 +11,5 @@ class ApplicationController < ActionController::Base
       redirect_to login_path
     end
   end
-
 
 end

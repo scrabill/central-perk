@@ -46,6 +46,5 @@ class MenuItemsController < ApplicationController
     params[:menu_item][:price] = params[:menu_item][:price].to_f
     params.require(:menu_item).permit(:name, :description, :price)
   end
-
-
+  
 end
