@@ -3,3 +3,7 @@
 label.checkbox label {
    padding: 10px;
 }
+
+.control, .checkbox {
+  padding-bottom: 30px;
+}
