@@ -13,7 +13,7 @@
     <div class="navbar-end is-active">
       <div class="navbar-item">
         <div class="buttons">
-          <% if current_user %>
+          <% if logged_in? %>
             Hello, <%= current_user.name %>!&nbsp;
             <%= link_to "Log Out", logout_path, class: "button is-primary" %>
           <% else %>
