@@ -5,10 +5,12 @@
   <%= f.label :name_for_pickup, class: "label" %>
   <%= f.text_field :name_for_pickup, class: "input" %><br><br>
 
-  <%= f.collection_check_boxes(:menu_item_ids, MenuItem.all, :id, :name, class: "checkbox") %>
+  <label class="checkbox">
+    <%= f.collection_check_boxes(:menu_item_ids, MenuItem.all, :id, :name, class: "checkbox") %>
+  </label>
 
-  <div class="field">
-   <%= f.label "Order Complete?" %>
+  <div class="control">
+   <%= f.label "Order Complete?", :class => "label" %>
    <%= f.label :completed, "Yes", :value => "true" %>
    <%= f.radio_button :completed, true, :checked => (@order.completed == true ? true : false) %>
 
