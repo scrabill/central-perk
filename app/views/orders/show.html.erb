@@ -7,4 +7,6 @@ Status: <%= @order.status %>
 
 <%= link_to "Back To All Orders", orders_path %>
 <%= link_to "Create a New Order", new_user_order_path(current_user) %>
-<%= link_to "Edit", edit_order_path %>
+<% if current_user.id == @order.user_id %>
+  <%= link_to "Edit", edit_order_path %>
+<% end %>
