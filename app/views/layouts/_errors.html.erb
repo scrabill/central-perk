@@ -1,4 +1,4 @@
-<% if object.errors.any? %>
+<% if object.errors.any?%>
   <article class="message is-danger">
     <div class="message-body">
       <strong><%= pluralize(object.errors.count, "error") %> prohibited this form from being saved:</strong>
@@ -6,7 +6,20 @@
       <% object.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
+      <% flash.each do |type, msg| %>
+        <li><%= msg %></li>
+      <% end %>
       </ul>
     </div>
   </article>
+  <% elsif !flash.empty? %>
+    <article class="message is-danger">
+      <div class="message-body">
+        <ul>
+        <% flash.each do |type, msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </article>
 <% end %>
