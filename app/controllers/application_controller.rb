@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :require_login, only: [:new, :create, :show]
+  before_action :require_login, only: [:new, :create, :show, :index]
   helper_method :current_user, :logged_in?
 
   def current_user
