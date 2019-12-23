@@ -10,7 +10,7 @@
       <%= link_to "Central Perk", root_path, class: "navbar-item" %>
       <% if logged_in? %>
         <%= link_to "All Orders (#{Order.orders_count})", orders_path, class: "navbar-item"  %>
-        <%= link_to "Completed Orders (#{Order.completed_count})", orders_path, class: "navbar-item"  %>
+        <%= link_to "Completed Orders (#{Order.completed_count})", orders_completed_path, class: "navbar-item"  %>
         <%= link_to "New Order", new_user_order_path(current_user), class: "navbar-item"  %>
 
         <%= link_to "Menu Items", menu_items_path, class: "navbar-item" %>
