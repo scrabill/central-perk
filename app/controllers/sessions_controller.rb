@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
     if @user
       if @user.authenticate(params[:user][:password])
         session[:user_id] = @user.id
-        redirect_to root_path
+        redirect_to orders_path
       end
     else
       redirect_to login_path, alert: "User not found. Please try again."
@@ -50,7 +50,7 @@ class SessionsController < ApplicationController
     @user.save
     session[:user_id] = @user.id
     puts "You have been successfully logged in with Google"
-    redirect_to root_path
+    redirect_to orders_path
   end
 
   private

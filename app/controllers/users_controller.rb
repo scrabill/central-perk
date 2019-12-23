@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
 
     if @user.save
-      redirect_to user_path(@user)
+      redirect_to orders_path
     else
       render :new
     end
