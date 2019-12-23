@@ -7,7 +7,14 @@
 
   <div class="navbar-menu">
     <div class="navbar-start">
+      <% if logged_in? %>
         <%= link_to "Central Perk", root_path, class: "navbar-item" %>
+        <%= link_to "All Orders", orders_path, class: "navbar-item"  %>
+        <%= link_to "New Order", new_user_order_path(current_user), class: "navbar-item"  %>
+
+        <%= link_to "Menu Items", menu_items_path, class: "navbar-item" %>
+        <%= link_to "New Menu Item", new_menu_item_path, class: "navbar-item"  %>
+      <% end %>
     </div>
 
     <div class="navbar-end is-active">
