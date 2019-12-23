@@ -44,9 +44,10 @@ class OrdersController < ApplicationController
   def update
     @order = Order.find_by_id(params[:id])
     @order.menu_items.clear
+    @order.update(order_params)
 
     items_to_add(order_params)
-    
+
     if @order.save
       redirect_to order_path(@order)
     else
