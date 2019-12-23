@@ -3,6 +3,7 @@
     <tr>
       <th>Name for Pickup</th>
       <th>Items</th>
+      <th>Total</th>
       <th>Date</th>
     </tr>
   </thead>
@@ -17,6 +18,7 @@
         <% end %>
         - <%= link_to "Edit", edit_order_path(order) %>
       </td>
+      <td>$<%= order.total %></td>
       <td><%= order.time_taken %></td>
     </tr>
     <% end %>
