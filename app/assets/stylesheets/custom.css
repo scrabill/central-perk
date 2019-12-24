@@ -7,3 +7,7 @@ label.checkbox label {
 .control, .checkbox {
   padding-bottom: 30px;
 }
+
+.footer {
+  background-color: #ffffff;
+}
