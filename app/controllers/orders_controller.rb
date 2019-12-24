@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :find_order [:edit, :show, :update]
+  before_action :find_order, only: [:edit, :show, :update]
 
   def index
     if params[:user_id]

@@ -1,5 +1,5 @@
 class MenuItemsController < ApplicationController
-  before_action :find_item [:edit, :show, :update]
+  before_action :find_item, only:[:edit, :show, :update]
 
   def index
     @items = MenuItem.all.uniq
