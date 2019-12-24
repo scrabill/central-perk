@@ -13,7 +13,7 @@
         <%= link_to "Completed Orders (#{Order.completed_count})", orders_completed_path, class: "navbar-item"  %>
         <%= link_to "New Order", new_user_order_path(current_user), class: "navbar-item"  %>
 
-        <%= link_to "Menu Items", menu_items_path, class: "navbar-item" %>
+        <%= link_to "Menu Items (#{MenuItem.items_count})", menu_items_path, class: "navbar-item" %>
         <%= link_to "New Menu Item", new_menu_item_path, class: "navbar-item"  %>
       <% end %>
     </div>

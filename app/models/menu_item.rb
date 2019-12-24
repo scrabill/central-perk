@@ -4,4 +4,8 @@ class MenuItem < ApplicationRecord
 
   validates :name, presence: true
   validates :name, uniqueness: true
+
+  def self.items_count
+    MenuItem.all.count
+  end
 end
