@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_action :find_order [:edit, :show, :update]
 
   def index
     if params[:user_id]
@@ -34,15 +35,12 @@ class OrdersController < ApplicationController
   end
 
   def edit
-    @order = Order.find_by_id(params[:id])
   end
 
   def show
-    @order = Order.find_by_id(params[:id])
   end
 
   def update
-    @order = Order.find_by_id(params[:id])
     @order.menu_items.clear
     @order.update(order_params)
 
@@ -60,6 +58,10 @@ class OrdersController < ApplicationController
   end
 
   private
+
+  def find_order
+    @order = Order.find_by_id(params[:id])
+  end
 
   def order_params
     ActiveRecord::Type::Boolean.new.cast(params[:order][:completed])

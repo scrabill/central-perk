@@ -1,4 +1,5 @@
 class MenuItemsController < ApplicationController
+  before_action :find_item [:edit, :show, :update]
 
   def index
     @items = MenuItem.all.uniq
@@ -19,15 +20,12 @@ class MenuItemsController < ApplicationController
   end
 
   def edit
-    @item = MenuItem.find_by_id(params[:id])
   end
 
   def show
-    @item = MenuItem.find_by_id(params[:id])
   end
 
   def update
-    @item = MenuItem.find_by_id(params[:id])
     @item.update(item_params)
     if @item.save
       redirect_to menu_item_path(@item)
@@ -42,9 +40,13 @@ class MenuItemsController < ApplicationController
 
   private
 
+  def find_item
+    @item = MenuItem.find_by_id(params[:id])
+  end
+
   def item_params
     params[:menu_item][:price] = params[:menu_item][:price].to_f
     params.require(:menu_item).permit(:name, :description, :price)
   end
-  
+
 end
