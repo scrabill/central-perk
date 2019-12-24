@@ -49,7 +49,7 @@ class Order < ApplicationRecord
     self.menu_items.each do |item|
       total += item.price
     end
-    total
+    "$#{total}"
   end
 
   def status
