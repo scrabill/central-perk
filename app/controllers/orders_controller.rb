@@ -64,18 +64,13 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    ActiveRecord::Type::Boolean.new.cast(params[:order][:completed])
     params.require(:order).permit(:user_id, :name_for_pickup, :completed, :total, :menu_item_ids)
   end
 
   def items_to_add(order_params)
-    items_to_add = params[:order][:menu_item_ids]
-
-    items_to_add.each do |item_id|
+    params[:order][:menu_item_ids].each do |item_id|
       if item_id != ""
-        item_id = item_id.to_i
-        item_to_add = MenuItem.find_by_id(item_id)
-        @order.menu_items << item_to_add
+        @order.menu_items << MenuItem.find_by_id(item_id)
       end
     end
   end
