@@ -17,13 +17,13 @@ A coffee shop, point-of-sale application build with Ruby on Rails.
 To test out the app using dummy data, follow these steps.
 
 1. In the root level of the directory, create a `.env` file
-1. Add the following, replacing `your_password` with a string. This will be the login for the user account Gunther, which all orders will belong and be nested under.
+1. Add the following, replacing `your_password` with a string to `.env`. This will be the login for the user account Gunther. All seed orders will belong to and be nested under Gunther.
 
 ```
 PASSWORD=your_password
 ```
 
-3. Run `rake db:seed` to populate the database with a user (Gunter), orders and menu items.
+3. Run `rake db:seed` to populate the database with a user (Gunther), orders and menu items.
 
 ## Enable Google Login
 
