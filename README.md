@@ -38,6 +38,11 @@ Detailed instructions on creating the Google Client keys can be seen here: [Goog
 
 > **Note**: Since the `.env` file contains sensitive information, it should not be tracked, committed or push to Github. Please see this post on [Hiding Sensitive Information with Environmental Variables in Ruby](https://shannoncrabill.com/blog/hiding-sensitive-information-with-environmental-variables-in-ruby/) for more information.
 
+## Plans for the future
+
+- Add _most_popular_ flag to menu items on the order page
+- 
+
 ## Additional Links
 
 - [Spec](spec.md)
