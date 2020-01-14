@@ -2,6 +2,7 @@ class MenuItemsController < ApplicationController
   before_action :find_item, only:[:edit, :show, :update]
 
   def index
+    Order.most_popular
     @items = MenuItem.all.uniq
   end
 
