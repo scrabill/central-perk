@@ -41,7 +41,8 @@ Detailed instructions on creating the Google Client keys can be seen here: [Goog
 ## Plans for the future
 
 - Add _most_popular_ flag to menu items on the order page
-- 
+- Sort menu_items alphabetically on new order page
+- Images and descriptions with menu_item selections
 
 ## Additional Links
 
